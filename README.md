@@ -12,6 +12,10 @@ Phase 2:
 1. Add the ability to change the time signature for a track.
 
 
-
 Phase 3:
 1. Let the user add tracks.  
+
+
+
+Drum Samples are from:
+https://github.com/crabacus/the-open-source-drumkit
