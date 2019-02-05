@@ -1,4 +1,5 @@
 import {Track} from "../src/js/models/Track";
+import Tone from 'tone';
 
 /**
  * Tests for the Track Class
@@ -92,15 +93,36 @@ test('Testing _getBarsBeatsSixteenths for 16th Note Divisions', () => {
 });
 
 
-
-
-
-
-test('Testing _getBarsBeatsSixteenths for 16th Note Divisions', () => {
-
+test('Testing _getBarsBeatsSixteenths for 4th Note Divisions', () => {
+  // TODO: Don't forget about this test
 });
 
-test('Testing _getBarsBeatsSixteenths for 4th Note Divisions', () => {
+
+test('Testing Track.Schedule', () => {
+  // const Tone = jest.fn().mockImplementation(() => {
+  //     return {
+  //       Transport: jest.fn().mockImplementation(() => {
+  //         return {schedule: jest.fn().mockImplementation((func, time) => 1)};
+  //       }),
+  //       Time: jest.fn().mockImplementation((time) => time)
+  //     };
+  // });
+
+
+
+  const beatsPerBar = 4;
+  const beatUnit = 4;
+  const numOfMeasures = 1;
+  const beatDivision = 2;
+  const track = new Track(beatsPerBar, beatUnit, numOfMeasures, beatDivision);
+
+
+
+  track.scheduleTrack(Tone);
+  // TODO: figure out how to mock this.
+  // expect(Tone.Transport).toHaveBeenCalledTimes(8);
+  // TODO: try this: https://stackoverflow.com/questions/45617362/how-to-mock-an-external-modules-function-with-jest#53022533
+
 
 });
 

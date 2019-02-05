@@ -34,7 +34,6 @@ export class Track {
       measure.beats.forEach((beat, beatIndex) => {
         const func = beat.soundFunction;
         const time = this._getBarsBeatsSixteenths(measureIndex, beatIndex);
-
         if (beat.isChecked) {
           tone.Transport.schedule(func, tone.Time(time));
         }

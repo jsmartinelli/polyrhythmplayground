@@ -42,5 +42,9 @@
   },
   "dependencies": {
     "tone": "^13.4.9"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true
   }
 }

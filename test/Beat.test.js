@@ -17,7 +17,7 @@ test('Checking a beat', () => {
   beat.checkBeat(func);
 
   expect(beat.isChecked).toBe(true);
-  expect(eval(beat.soundFunction)).toBe(func);
+  expect(beat.soundFunction).toBe(func);
 
 });
 
