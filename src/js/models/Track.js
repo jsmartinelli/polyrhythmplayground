@@ -51,7 +51,13 @@ export class Track {
    */
   _getBarsBeatsSixteenths(measureIndex, beatIndex) {
     const quarters = Math.floor(beatIndex/this.beatDivision);
-    const sixteenths =  this.beatDivision % 4 === 0 ? beatIndex % this.beatDivision : (beatIndex * this.beatDivision) % 4;
+    // Default sixteenths to zero to handle a beatDivistion of 1 (quarter notes)
+    let sixteenths = 0;
+
+    if (this.beatDivision !== 1) {
+      sixteenths = this.beatDivision % 4 === 0 ? beatIndex % this.beatDivision : (beatIndex * this.beatDivision) % 4;
+    }
+
     return `${measureIndex}:${quarters}:${sixteenths}`;
   };
 

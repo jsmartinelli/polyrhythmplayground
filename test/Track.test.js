@@ -1,5 +1,5 @@
 import {Track} from "../src/js/models/Track";
-import Tone from 'tone';
+//import Tone from 'tone';
 
 /**
  * Tests for the Track Class
@@ -94,34 +94,42 @@ test('Testing _getBarsBeatsSixteenths for 16th Note Divisions', () => {
 
 
 test('Testing _getBarsBeatsSixteenths for 4th Note Divisions', () => {
-  // TODO: Don't forget about this test
+  const beatsPerBar = 4;
+  const beatUnit = 4;
+  const numOfMeasures = 2;
+  const beatDivision = 1;
+  const track = new Track(beatsPerBar, beatUnit, numOfMeasures, beatDivision);
+
+  expect(track._getBarsBeatsSixteenths(0, 0)).toBe('0:0:0');
+  expect(track._getBarsBeatsSixteenths(0, 1)).toBe('0:1:0');
+  expect(track._getBarsBeatsSixteenths(0, 2)).toBe('0:2:0');
+  expect(track._getBarsBeatsSixteenths(0, 3)).toBe('0:3:0');
+  expect(track._getBarsBeatsSixteenths(1, 3)).toBe('1:3:0');
+
+
 });
 
 
-test('Testing Track.Schedule', () => {
-  // const Tone = jest.fn().mockImplementation(() => {
-  //     return {
-  //       Transport: jest.fn().mockImplementation(() => {
-  //         return {schedule: jest.fn().mockImplementation((func, time) => 1)};
-  //       }),
-  //       Time: jest.fn().mockImplementation((time) => time)
-  //     };
-  // });
-
-
+test('Testing Track.Schedule by checking every other beat', () => {
+  const Tone = jest.genMockFromModule('tone');
 
   const beatsPerBar = 4;
   const beatUnit = 4;
   const numOfMeasures = 1;
   const beatDivision = 2;
   const track = new Track(beatsPerBar, beatUnit, numOfMeasures, beatDivision);
-
-
+  track.measures.forEach((measure) => {
+    measure.beats.forEach((beat, index) => {
+      if (index % 2 === 0) {
+        beat.checkBeat(() => true);
+      }
+    });
+  });
 
   track.scheduleTrack(Tone);
-  // TODO: figure out how to mock this.
-  // expect(Tone.Transport).toHaveBeenCalledTimes(8);
-  // TODO: try this: https://stackoverflow.com/questions/45617362/how-to-mock-an-external-modules-function-with-jest#53022533
+
+  expect(Tone.Transport.schedule).toHaveBeenCalledTimes(4);
+
 
 
 });

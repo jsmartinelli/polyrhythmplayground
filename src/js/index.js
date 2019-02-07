@@ -4,7 +4,7 @@ import {Track} from "./models/Track";
 
 const playButton = document.getElementById('playtrack');
 const stopButton = document.getElementById('stoptrack');
-const beatDivision = 2;
+const beatDivision = 1;
 
 const track = new Track(4, 4, 2, beatDivision);
 

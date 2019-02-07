@@ -4,7 +4,7 @@ let beat;
 
 beforeEach(() => {
   beat = new Beat();
-})
+});
 
 test('Check the beat defaults', () => {
   expect(beat.isChecked).toBe(false);
