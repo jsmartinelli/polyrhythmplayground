@@ -1,4 +1,4 @@
-import {Beat} from "../src/js/models/Beat";
+import {Beat} from "../src/models/Beat";
 
 let beat;
 

@@ -1,4 +1,4 @@
-import {Track} from "../src/js/models/Track";
+import {Track} from "../src/models/Track";
 //import Tone from 'tone';
 
 /**
