@@ -4,7 +4,7 @@
   "description": "Drum Machine that supports polyrhythms",
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "src/test": "src/test"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -15,15 +15,18 @@
   "license": "MIT",
   "repository": "https://github.com/jsmartinelli/polyrhythmplayground.git",
   "dependencies": {
-    "tone": "^13.4.9",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "2.1.5"
+    "react-scripts": "2.1.5",
+    "tone": "^13.4.9"
   },
   "jest": {
-    "verbose": true,
-    "collectCoverage": true
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/vendor/**"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -1,14 +1,16 @@
 
 import Tone from 'tone';
-import {Track} from "./models/Track";
+import Track from "./js/models/Track";
+import ReactDOM from "react-dom";
+import App from "./js/App";
+import React from "react";
 
-const playButton = document.getElementById('playtrack');
-const stopButton = document.getElementById('stoptrack');
+
 const beatDivision = 1;
 
 const track = new Track(4, 4, 2, beatDivision);
 
-const synth = new Tone.MetalSynth().toMaster();
+//const synth = new Tone.MetalSynth().toMaster();
 const polySynth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 
 function triggerSynth(time){
@@ -38,11 +40,6 @@ Tone.Transport.loop = true;
 Tone.Transport.timeSignature = 4;
 Tone.Transport.bpm.value = 120;
 
-playButton.addEventListener('click', () => Tone.Transport.toggle());
-stopButton.addEventListener('click', () => Tone.Transport.toggle());
-
-
-
-
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 

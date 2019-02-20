@@ -1,6 +1,6 @@
-import {Measure} from "./Measure";
+import Measure from "./Measure";
 
-export class Track {
+class Track {
 
   /**
    * Create a new Track based ont the following parameters
@@ -62,3 +62,5 @@ export class Track {
   };
 
 }
+
+export default Track;
