@@ -24,7 +24,6 @@ class Track {
     }
 
     this.beatLength = `${beatDivision * beatUnit}n`;
-
   };
 
   /**
@@ -52,9 +51,9 @@ class Track {
     console.log(patternArray);
     const seq =  new tone.Sequence((time, beat) => {
       if (beat.isChecked) {
-        beat.soundFunction(time);
+        beat.soundFunction(this.beatLength);
       }
-    }, patternArray, '4n');
+    }, patternArray, this.beatLength);
 
     seq.loop = true;
 

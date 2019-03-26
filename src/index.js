@@ -5,48 +5,47 @@ import ReactDOM from "react-dom";
 import App from "./js/App";
 import React from "react";
 
-
 const beatDivision = 1;
 
-const track = new Track(4, 4, 1, beatDivision);
-const track2 = new Track(3, 4, 1, beatDivision);
+const track = new Track(4, 4, 2, beatDivision);
+const track2 = new Track(3, 4, 2, beatDivision);
 
 //const synth = new Tone.MetalSynth().toMaster();
 const polySynth = new Tone.PolySynth(6, Tone.Synth).toMaster();
 
 function triggerSynth1(time){
-  polySynth.triggerAttackRelease(["C4"], "8n");
+  polySynth.triggerAttackRelease(["C4"], time);
   console.log("triggerSynth1");
 }
 
 function triggerSynth2 (time) {
-  polySynth.triggerAttackRelease(["D4"], "8n");
+  polySynth.triggerAttackRelease(["D4"], time);
   console.log("triggerSynth2");
 }
 
 function triggerSynth3(time){
-  polySynth.triggerAttackRelease(["E4"], "8n");
+  polySynth.triggerAttackRelease(["E4"], time);
   console.log("triggerSynth3");
 }
 
 function triggerSynth4(time){
-  polySynth.triggerAttackRelease(["F4"], "8n");
+  polySynth.triggerAttackRelease(["F4"], time);
   console.log("triggerSynth4");
 }
 
 
 function triggerSynth21(time){
-  polySynth.triggerAttackRelease(["E3"], "8n");
+  polySynth.triggerAttackRelease(["E3"], time);
   console.log("triggerSynth21");
 }
 
 function triggerSynth22 (time) {
-  polySynth.triggerAttackRelease(["F3"], "8n");
+  polySynth.triggerAttackRelease(["F3"], time);
   console.log("triggerSynth22");
 }
 
 function triggerSynth23(time){
-  polySynth.triggerAttackRelease(["G3"], "8n");
+  polySynth.triggerAttackRelease(["G3"], time);
   console.log("triggerSynth23");
 }
 
@@ -54,7 +53,7 @@ function triggerSynth23(time){
 // Configure the track to have every other note checked
 track.measures.forEach((measure) => {
   measure.beats.forEach((beat, index) => {
-    switch (index) {
+    switch (index % 4) {
       case 0: beat.checkBeat(triggerSynth1); break;
       case 1: beat.checkBeat(triggerSynth2); break;
       case 2: beat.checkBeat(triggerSynth3); break;
@@ -66,7 +65,7 @@ track.measures.forEach((measure) => {
 
 track2.measures.forEach((measure) => {
   measure.beats.forEach((beat, index) => {
-    switch (index) {
+    switch (index % 3) {
       case 0: beat.checkBeat(triggerSynth21); break;
       case 1: beat.checkBeat(triggerSynth22); break;
       case 2: beat.checkBeat(triggerSynth23); break;
