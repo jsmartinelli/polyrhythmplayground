@@ -1,6 +1,7 @@
 import React from 'react';
 import TrackArea from "./views/TrackArea";
 import InstrumentSelect from "./views/InstrumentSelect";
+import Tone from 'tone';
 
 class App extends React.Component {
 
@@ -17,9 +18,12 @@ class App extends React.Component {
       measures: '4'
     };
 
+    this.playing = false;
+
     this.updateStateValue = this.updateStateValue.bind(this);
     this.addTrack = this.addTrack.bind(this);
     this.removeTrack = this.removeTrack.bind(this);
+    this.toggle = this.toggle.bind(this);
   }
 
   updateStateValue (type, value) {
@@ -43,6 +47,21 @@ class App extends React.Component {
     this.setState({
       tracks: tracks
     });
+  }
+
+
+  /**
+   * Starts and stops all of the tracks.
+   */
+  toggle () {
+    if (!this.playing) {
+      // Starting the tracks slightly in the future to help fight latency
+      Tone.Transport.start('+0.5');
+    }
+    else {
+      Tone.Transport.stop();
+    }
+    this.playing = !this.playing;
   }
 
   render () {
@@ -76,7 +95,7 @@ class App extends React.Component {
       <input type="number" min="1" max="8" step="1" value={this.state.measures} id="measures" name="measures"
              onChange={(e) => this.updateStateValue("measures", e.target.value)}/>
       <button name="addtrack" id="addtrack" onClick={this.addTrack}>Add Track</button>
-      <button name="play" id="play">Play</button>
+      <button name="play" id="play" onClick={this.toggle}>Play</button>
 
       <TrackArea items={this.state.tracks} removeHandler={this.removeTrack}/>
       <br/>

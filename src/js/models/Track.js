@@ -23,22 +23,43 @@ class Track {
       this.measures.push(new Measure(beats));
     }
 
+    this.beatLength = `${beatDivision * beatUnit}n`;
+
   };
 
   /**
    * Schedules all of the beats on the track using Tone.js Transport Class
-   * @param {Tone.Transport} transport - instance of Tone.Transport.
+   * @param {Tone} tone - instance of Tone.
    */
   scheduleTrack (tone) {
+    const patternArray = [];
+    console.log(this.beatDivision);
     this.measures.forEach((measure, measureIndex) => {
       measure.beats.forEach((beat, beatIndex) => {
-        const func = beat.soundFunction;
-        const time = this._getBarsBeatsSixteenths(measureIndex, beatIndex);
-        if (beat.isChecked) {
-          tone.Transport.schedule(func, tone.Time(time));
-        }
+        // push all of the beats into an array
+        patternArray.push(beat);
+
+        // const func = beat.soundFunction;
+        // const time = this._getBarsBeatsSixteenths(measureIndex, beatIndex);
+        // if (beat.isChecked) {
+          // tone.Transport.schedule(func, tone.Time(time));
+          //new tone.Loop(func, tone.Time(time)).start(time);
+        // }
       });
     });
+
+    // now, setup the sequence.
+    console.log(patternArray);
+    const seq =  new tone.Sequence((time, beat) => {
+      if (beat.isChecked) {
+        beat.soundFunction(time);
+      }
+    }, patternArray, '4n');
+
+    seq.loop = true;
+
+    return seq;
+
   };
 
   /**
@@ -60,6 +81,7 @@ class Track {
 
     return `${measureIndex}:${quarters}:${sixteenths}`;
   };
+
 
 }
 
