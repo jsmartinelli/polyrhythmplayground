@@ -16,7 +16,7 @@ export default function trackReducers(state = initialState, action) {
     }
 
     case (DELETE_TRACK): {
-
+      return state;
 
 
 
