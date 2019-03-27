@@ -11,19 +11,20 @@ class Track {
    * (e.g. beats in a measure = beatDivision * beatsPerBar)
    */
   constructor (beatsPerBar, beatUnit, numOfMeasures, beatDivision) {
+    // Generate a unique-ish ID based on Date.now() and a random value
+    this.id = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
     this.beatsPerBar = beatsPerBar;
     this.beatUnit = beatUnit;
     this.beatDivision = beatDivision;
-
+    this.beatLength = `${beatDivision * beatUnit}n`;
     this.measures = [];
 
     const beats = beatDivision * beatsPerBar;
-
     for (let i = 0; i < numOfMeasures; i++) {
       this.measures.push(new Measure(beats));
     }
 
-    this.beatLength = `${beatDivision * beatUnit}n`;
+
   };
 
   /**

@@ -1,0 +1,12 @@
+{
+  "CREATE_TRACK": "CREATE_TRACK",
+  "DELETE_TRACK": "DELETE_TRACK",
+  "timeSignatures": ["3/4", "4/4", "5/4", "6/8", "12/8"],
+  "noteDivisions": [
+    {"name": "whole", "value": 1},
+    {"name":  "half", "value":  2},
+    {"name": "quarter", "value": 4},
+    {"name": "eighth", "value": 8},
+    {"name": "sixteenth", "value": 16}
+  ]
+}
