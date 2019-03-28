@@ -16,7 +16,7 @@ class Track {
     this.id = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
     this.beatsPerBar = parseInt(beatsPerBar);
     this.beatUnit = parseInt(beatUnit);
-    this.beatDivision = parseInt(beatDivisions.find((beatDiv) => beatDiv.name === beatDivision).value);
+    this.beatDivision = parseInt(beatDivisions.find((beatDiv) => beatDiv.name === beatDivision).value) / this.beatUnit;
     this.beatLength = `${this.beatDivision * this.beatUnit}n`;
     this.measures = [];
 
@@ -37,15 +37,7 @@ class Track {
     console.log(this.beatDivision);
     this.measures.forEach((measure, measureIndex) => {
       measure.beats.forEach((beat, beatIndex) => {
-        // push all of the beats into an array
         patternArray.push(beat);
-
-        // const func = beat.soundFunction;
-        // const time = this._getBarsBeatsSixteenths(measureIndex, beatIndex);
-        // if (beat.isChecked) {
-          // tone.Transport.schedule(func, tone.Time(time));
-          //new tone.Loop(func, tone.Time(time)).start(time);
-        // }
       });
     });
 

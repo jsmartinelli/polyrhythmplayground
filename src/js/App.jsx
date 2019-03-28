@@ -49,7 +49,7 @@ class App extends React.Component {
         <button name="play" id="play" onClick={this.toggle}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>
-      <TrackArea items={this.props.tracks} removeHandler={this.removeTrack}/>
+      <TrackArea tracks={this.props.tracks} removeHandler={this.removeTrack}/>
       <br/>
       <InstrumentSelect/>
     </div>;

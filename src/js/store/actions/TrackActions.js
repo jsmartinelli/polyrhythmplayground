@@ -13,7 +13,6 @@ export function createTrack (trackData) {
   }
 }
 
-
 export function deleteTrack (track) {
   return {
     type: DELETE_TRACK,

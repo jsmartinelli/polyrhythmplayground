@@ -1,7 +1,7 @@
 {
   "CREATE_TRACK": "CREATE_TRACK",
   "DELETE_TRACK": "DELETE_TRACK",
-  "timeSignatures": ["3/4", "4/4", "5/4", "6/8", "12/8"],
+  "timeSignatures": ["3/4", "4/4", "5/4"],
   "beatDivisions": [
     {"name": "whole", "value": 1},
     {"name":  "half", "value":  2},
