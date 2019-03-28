@@ -16,7 +16,7 @@ export default function trackReducers(state = initialState, action) {
     }
 
     case (DELETE_TRACK): {
-      const newTracks = state.tracks.filter((track) => track.id !== action.payload.track.id);
+      const newTracks = state.tracks.filter((track) => track.id !== action.payload.trackId);
       return {
         ...state,
         tracks: newTracks

@@ -13,11 +13,11 @@ export function createTrack (trackData) {
   }
 }
 
-export function deleteTrack (track) {
+export function deleteTrack (trackId) {
   return {
     type: DELETE_TRACK,
     payload: {
-      track
+      trackId
     }
   }
 }

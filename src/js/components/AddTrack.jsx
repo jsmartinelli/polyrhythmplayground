@@ -27,9 +27,7 @@ class AddTrack extends React.Component {
 
   createTrack = (e) => {
     this.props.createTrackHandler({
-      timeSignature: this.state.timeSignature,
-      beatDivision: this.state.beatDivision,
-      measures: this.state.measures
+      ...this.state
     });
   };
 

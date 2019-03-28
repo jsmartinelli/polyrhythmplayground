@@ -11,7 +11,7 @@ class Track extends React.Component {
       <li>
         <h3>This is a track #{this.props.track.index}</h3>
         {measures}
-        <button onClick={() => this.props.removeHandler(this.props.track)}>X</button>
+        <button onClick={() => this.props.removeHandler(this.props.track.id)}>X</button>
       </li>
     );
   }
