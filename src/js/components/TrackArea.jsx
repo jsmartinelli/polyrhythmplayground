@@ -7,7 +7,7 @@ class TrackArea extends React.Component {
   render () {
     let trackComponents = [];
 
-    this.props.items.forEach((item) => trackComponents.push(<Track item={item} removeHandler={this.props.removeHandler}/>));
+    this.props.items.forEach((item) => trackComponents.push(<Track key={item.id} item={item} removeHandler={this.props.removeHandler}/>));
 
     return <div className="tracks">
       <h2>Tracks</h2>

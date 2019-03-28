@@ -1,40 +1,41 @@
 import React from 'react';
-import TrackArea from "./views/TrackArea";
-import InstrumentSelect from "./views/InstrumentSelect";
+import TrackArea from "./components/TrackArea";
+import InstrumentSelect from "./components/InstrumentSelect";
 import Tone from 'tone';
-import AddTrack from "./views/AddTrack";
+import AddTrack from "./components/AddTrack";
+import {createTrack, deleteTrack} from './store/actions/TrackActions';
+import {connect} from "react-redux";
 
 class App extends React.Component {
 
   constructor (props) {
     super(props);
 
-    // set initial state
-    this.state = {
-      tracks: [],
-      currentInstrument: '',
-    };
+    // // set initial state
+    // this.state = {
+    //   tracks: [],
+    //   currentInstrument: '',
+    // };
 
     this.playing = false;
 
-    this.updateStateValue = this.updateStateValue.bind(this);
+    // this.updateStateValue = this.updateStateValue.bind(this);
     this.toggle = this.toggle.bind(this);
   }
 
-  updateStateValue (type, value) {
-    let obj = {};
-    obj[type] = value;
-    this.setState(obj);
-  }
+  // updateStateValue (type, value) {
+  //   let obj = {};
+  //   obj[type] = value;
+  //   this.setState(obj);
+  // }
 
   createTrack = (trackData) => {
-    // TODO: implement this next
-    console.log("trackData", trackData);
+    this.props.dispatch(createTrack(trackData));
 
   };
 
   removeTrack = (track) => {
-    // TODO: implement this after createTrack
+    this.props.dispatch(deleteTrack(track));
   };
 
 
@@ -57,16 +58,19 @@ class App extends React.Component {
       <h1>Let's make some music!</h1>
       <div id="play">
         <label htmlFor="tempo">Tempo: </label>
-        <input type="number" min="1" max="200" value={this.state.tempo} name="tempo" id="tempo"
-             onChange={(e) => this.updateStateValue("tempo", e.target.value)}/>
+        <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo"/>
         <button name="play" id="play" onClick={this.toggle}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>
-      <TrackArea items={this.state.tracks} removeHandler={this.removeTrack}/>
+      <TrackArea items={this.props.tracks} removeHandler={this.removeTrack}/>
       <br/>
       <InstrumentSelect/>
     </div>;
   }
 }
 
-export default App;
+function mapStateToProps (state) {
+  return state.tracks;
+}
+
+export default connect(mapStateToProps)(App);

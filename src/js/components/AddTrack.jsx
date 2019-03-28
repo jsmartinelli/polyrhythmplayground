@@ -1,5 +1,5 @@
 import React from 'react';
-import {noteDivisions, timeSignatures} from '../common/common';
+import {beatDivisions, timeSignatures} from '../common/common';
 
 class AddTrack extends React.Component {
 
@@ -8,7 +8,7 @@ class AddTrack extends React.Component {
 
     this.state = {
       timeSignature: '4/4',
-      noteDivision: 'quarter',
+      beatDivision: 'quarter',
       measures: '2'
     }
   }
@@ -18,7 +18,7 @@ class AddTrack extends React.Component {
   };
 
   noteDivisionOnChange = (e) => {
-    this.setState({noteDivision: e.target.value});
+    this.setState({beatDivision: e.target.value});
   };
 
   measureOnChange = (e) => {
@@ -28,7 +28,7 @@ class AddTrack extends React.Component {
   createTrack = (e) => {
     this.props.createTrackHandler({
       timeSignature: this.state.timeSignature,
-      noteDivision: this.state.noteDivision,
+      beatDivision: this.state.beatDivision,
       measures: this.state.measures
     });
   };
@@ -50,7 +50,7 @@ class AddTrack extends React.Component {
         <label htmlFor="noteDivision">Note Division </label>
         <select id="noteDivision" name="noteDivision" defaultValue="quarter" onChange={this.noteDivisionOnChange}>
           {
-            noteDivisions.map(({name}) => (
+            beatDivisions.map(({name}) => (
               <option key={name} value={name}>{name}</option>
             ))
           }

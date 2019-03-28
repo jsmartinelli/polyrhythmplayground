@@ -1,4 +1,5 @@
 import Measure from "./Measure";
+import {beatDivisions} from '../common/common';
 
 class Track {
 
@@ -13,13 +14,13 @@ class Track {
   constructor (beatsPerBar, beatUnit, numOfMeasures, beatDivision) {
     // Generate a unique-ish ID based on Date.now() and a random value
     this.id = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
-    this.beatsPerBar = beatsPerBar;
-    this.beatUnit = beatUnit;
-    this.beatDivision = beatDivision;
-    this.beatLength = `${beatDivision * beatUnit}n`;
+    this.beatsPerBar = parseInt(beatsPerBar);
+    this.beatUnit = parseInt(beatUnit);
+    this.beatDivision = parseInt(beatDivisions.find((beatDiv) => beatDiv.name === beatDivision).value);
+    this.beatLength = `${this.beatDivision * this.beatUnit}n`;
     this.measures = [];
 
-    const beats = beatDivision * beatsPerBar;
+    const beats = this.beatDivision * this.beatsPerBar;
     for (let i = 0; i < numOfMeasures; i++) {
       this.measures.push(new Measure(beats));
     }
