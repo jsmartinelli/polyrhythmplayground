@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/js/components/AddTrack.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/js/components</a> AddTrack.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">100% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/0</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/12</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import {beatDivisions, timeSignatures} from '../common/common';</span>
+&nbsp;
+class AddTrack extends React.Component {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor</span> (props) <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    super(props);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    this.state = {</span>
+      timeSignature: '4/4',
+      beatDivision: 'quarter',
+      measures: '2'
+    }
+  }
+&nbsp;
+  timeSignatureOnChange = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({timeSignature: e.target.value});</span>
+  };
+&nbsp;
+  noteDivisionOnChange = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({beatDivision: e.target.value});</span>
+  };
+&nbsp;
+  measureOnChange = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.setState({measures: e.target.value});</span>
+  };
+&nbsp;
+  createTrack = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.props.createTrackHandler({</span>
+      ...this.state
+    });
+  };
+&nbsp;
+&nbsp;
+<span class="fstat-no" title="function not covered" >  render</span>() {
+<span class="cstat-no" title="statement not covered" >    return &lt;div name="addtrack" id="addtrack"&gt;</span>
+      &lt;div&gt;
+        &lt;label htmlFor="timeSignature"&gt;Time Signature &lt;/label&gt;
+        &lt;select id="timeSignature" name="timeSignature" defaultValue="4/4" onChange={this.timeSignatureOnChange}&gt;
+          {
+            timeSignatures.map(<span class="fstat-no" title="function not covered" >timeSig</span> =&gt; (
+<span class="cstat-no" title="statement not covered" >              &lt;option key={timeSig} value={timeSig}&gt;{timeSig}&lt;/option&gt;</span>
+            ))
+          }
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+        &lt;label htmlFor="noteDivision"&gt;Note Division &lt;/label&gt;
+        &lt;select id="noteDivision" name="noteDivision" defaultValue="quarter" onChange={this.noteDivisionOnChange}&gt;
+          {
+            beatDivisions.map(<span class="fstat-no" title="function not covered" >({</span>name}) =&gt; (
+<span class="cstat-no" title="statement not covered" >              &lt;option key={name} value={name}&gt;{name}&lt;/option&gt;</span>
+            ))
+          }
+        &lt;/select&gt;
+      &lt;/div&gt;
+      &lt;label htmlFor="measures"&gt;Measures: &lt;/label&gt;
+      &lt;input type="number" min="1" max="8" step="1" id="measures" name="measures" defaultValue="2"
+             onChange={this.measureOnChange}/&gt;
+      &lt;button name="addtrack" id="addtrack" onClick={this.createTrack}&gt;Add Track&lt;/button&gt;
+    &lt;/div&gt;
+  }
+}
+export default AddTrack;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 27 2019 22:48:00 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

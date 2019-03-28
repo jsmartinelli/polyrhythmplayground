@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/js/App.jsx</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/js</a> App.jsx
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/19</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/19</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import React from 'react';</span>
+<span class="cstat-no" title="statement not covered" >import TrackArea from "./components/TrackArea";</span>
+<span class="cstat-no" title="statement not covered" >import InstrumentSelect from "./components/InstrumentSelect";</span>
+<span class="cstat-no" title="statement not covered" >import Tone from 'tone';</span>
+<span class="cstat-no" title="statement not covered" >import AddTrack from "./components/AddTrack";</span>
+<span class="cstat-no" title="statement not covered" >import {createTrack, deleteTrack} from './store/actions/TrackActions';</span>
+<span class="cstat-no" title="statement not covered" >import {connect} from "react-redux";</span>
+&nbsp;
+class App extends React.Component {
+&nbsp;
+<span class="fstat-no" title="function not covered" >  constructor</span> (props) <span class="cstat-no" title="statement not covered" >{</span>
+<span class="cstat-no" title="statement not covered" >    super(props);</span>
+<span class="cstat-no" title="statement not covered" >    this.playing = false;</span>
+  }
+&nbsp;
+&nbsp;
+  createTrack = (<span class="fstat-no" title="function not covered" >trackData) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.props.dispatch(createTrack(trackData));</span>
+  };
+&nbsp;
+  removeTrack = (<span class="fstat-no" title="function not covered" >track) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    this.props.dispatch(deleteTrack(track));</span>
+  };
+&nbsp;
+  onTempoChange = (<span class="fstat-no" title="function not covered" >e) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    Tone.Transport.tempo = e.target.value;</span>
+  };
+&nbsp;
+  /**
+   * Starts and stops all of the tracks.
+   */
+  toggle = <span class="fstat-no" title="function not covered" >() =&gt; </span>{
+<span class="cstat-no" title="statement not covered" >    if (!this.playing) {</span>
+      // Starting the tracks slightly in the future to help fight latency
+<span class="cstat-no" title="statement not covered" >      Tone.Transport.start('+0.5');</span>
+    }
+    else {
+<span class="cstat-no" title="statement not covered" >      Tone.Transport.stop();</span>
+    }
+<span class="cstat-no" title="statement not covered" >    this.playing = !this.playing;</span>
+  }
+&nbsp;
+<span class="fstat-no" title="function not covered" >  render</span> () {
+<span class="cstat-no" title="statement not covered" >    return &lt;div&gt;</span>
+      &lt;h1&gt;Let's make some music!&lt;/h1&gt;
+      &lt;div id="play"&gt;
+        &lt;label htmlFor="tempo"&gt;Tempo: &lt;/label&gt;
+        &lt;input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo" onChange={this.onTempoChange}/&gt;
+        &lt;button name="play" id="play" onClick={this.toggle}&gt;Play&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;AddTrack createTrackHandler={this.createTrack}/&gt;
+      &lt;TrackArea tracks={this.props.tracks} removeHandler={this.removeTrack}/&gt;
+      &lt;br/&gt;
+      &lt;InstrumentSelect/&gt;
+    &lt;/div&gt;;
+  }
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >mapStateToProps (state) {</span>
+<span class="cstat-no" title="statement not covered" >  return state.tracks;</span>
+}
+&nbsp;
+export default connect(mapStateToProps)(App);
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 27 2019 22:48:00 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>

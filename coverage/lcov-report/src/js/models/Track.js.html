@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/js/models/Track.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\..\index.html">All files</a> / <a href="index.html">src/js/models</a> Track.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">38.46% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>10/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">28.57% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">36% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>9/25</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">11x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import Measure from "./Measure";
+import {beatDivisions} from '../common/common';
+&nbsp;
+export default class Track {
+&nbsp;
+  /**
+   * Create a new Track based ont the following parameters
+   * @param {number} beatsPerBar - How many beats are in a measure (this is the numerator of the time signature)
+   * @param {number} beatUnit - What is one beat in a measure (This is the denominator of the time signature)
+   * @param {number} numOfMeasures - How many measures are in the track.
+   * @param {string} beatDivision - The name of the note length used to decide how many beats are in a measure
+   *                    (e.g. 'quarter', 'eighth', etc.)
+   */
+  constructor (beatsPerBar, beatUnit, numOfMeasures, beatDivision) {
+    // Generate a unique-ish ID based on Date.now() and a random value
+    this.id = (Date.now().toString(36) + Math.random().toString(36).substr(2, 5)).toUpperCase()
+    this.beatsPerBar = parseInt(beatsPerBar);
+    this.beatUnit = parseInt(beatUnit);
+    this.beatDivision = parseInt(beatDivisions.find((beatDiv) =&gt; beatDiv.name === beatDivision).value) / this.beatUnit;
+    this.beatLength = `${this.beatDivision * this.beatUnit}n`;
+    this.measures = [];
+&nbsp;
+    const beats = this.beatDivision * this.beatsPerBar;
+    for (let i = 0; i &lt; numOfMeasures; i++) {
+      this.measures.push(new Measure(beats));
+    }
+&nbsp;
+&nbsp;
+  };
+&nbsp;
+  /**
+   * Schedules all of the beats on the track using Tone.js Transport Class
+   * @param {Tone} tone - instance of Tone.
+   */
+<span class="fstat-no" title="function not covered" >  sc</span>heduleTrack (tone) {
+    const patternArray = <span class="cstat-no" title="statement not covered" >[];</span>
+<span class="cstat-no" title="statement not covered" >    console.log(this.beatDivision);</span>
+<span class="cstat-no" title="statement not covered" >    this.measures.forEach(<span class="fstat-no" title="function not covered" >(m</span>easure, measureIndex) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      measure.beats.forEach(<span class="fstat-no" title="function not covered" >(b</span>eat, beatIndex) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        patternArray.push(beat);</span>
+      });
+    });
+&nbsp;
+    // now, setup the sequence.
+<span class="cstat-no" title="statement not covered" >    console.log(patternArray);</span>
+    const seq =  <span class="cstat-no" title="statement not covered" >new tone.Sequence(<span class="fstat-no" title="function not covered" >(t</span>ime, beat) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >      if (beat.isChecked) {</span>
+<span class="cstat-no" title="statement not covered" >        beat.soundFunction(this.beatLength);</span>
+      }
+    }, patternArray, this.beatLength);
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    seq.loop = true;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return seq;</span>
+&nbsp;
+  };
+&nbsp;
+  /**
+   * Generate a given beat's time in Bars:Beats:Sixteenths notation
+   * @private
+   *
+   * @param measureIndex - index of the beat's measure
+   * @param beatIndex - beat's index in the measure
+   * @returns {string} Bars:Beats:Sixteenths notation for the beat
+   */
+<span class="fstat-no" title="function not covered" >  _g</span>etBarsBeatsSixteenths(measureIndex, beatIndex) {
+    const quarters = <span class="cstat-no" title="statement not covered" >Math.floor(beatIndex/this.beatDivision);</span>
+    // Default sixteenths to zero to handle a beatDivistion of 1 (quarter notes)
+    let sixteenths = <span class="cstat-no" title="statement not covered" >0;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    if (this.beatDivision !== 1) {</span>
+<span class="cstat-no" title="statement not covered" >      sixteenths = this.beatDivision % 4 === 0 ? beatIndex % this.beatDivision : (beatIndex * this.beatDivision) % 4;</span>
+    }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >    return `${measureIndex}:${quarters}:${sixteenths}`;</span>
+  };
+&nbsp;
+&nbsp;
+}
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 27 2019 22:48:00 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="..\..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\..\sorter.js"></script>
+</body>
+</html>

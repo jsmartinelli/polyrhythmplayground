@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/js/poc.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="..\..\prettify.css" />
+    <link rel="stylesheet" href="..\..\base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(..\..\sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="..\..\index.html">All files</a> / <a href="index.html">src/js</a> poc.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/46</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/9</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/39</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js"><span class="cstat-no" title="statement not covered" >import Track from "./models/Track";</span>
+<span class="cstat-no" title="statement not covered" >import Tone from "tone";</span>
+&nbsp;
+const beatDivision = <span class="cstat-no" title="statement not covered" >1;</span>
+&nbsp;
+const track = <span class="cstat-no" title="statement not covered" >new Track(4, 4, 2, beatDivision);</span>
+const track2 = <span class="cstat-no" title="statement not covered" >new Track(3, 4, 2, beatDivision);</span>
+&nbsp;
+//const synth = new Tone.MetalSynth().toMaster();
+const polySynth = <span class="cstat-no" title="statement not covered" >new Tone.PolySynth(6, Tone.Synth).toMaster();</span>
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth1(time){</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["C4"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth1");</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth2 (time) {</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["D4"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth2");</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth3(time){</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["E4"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth3");</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth4(time){</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["F4"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth4");</span>
+}
+&nbsp;
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth21(time){</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["E3"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth21");</span>
+}
+&nbsp;
+function <span class="fstat-no" title="function not covered" >triggerSynth22 (time) {</span>
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["F3"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth22");</span>
+}
+&nbsp;
+function triggerSynth23(time){
+<span class="cstat-no" title="statement not covered" >  polySynth.triggerAttackRelease(["G3"], time);</span>
+<span class="cstat-no" title="statement not covered" >  console.log("triggerSynth23");</span>
+}
+&nbsp;
+&nbsp;
+// Configure the track to have every other note checked
+<span class="cstat-no" title="statement not covered" >track.measures.forEach((<span class="fstat-no" title="function not covered" >measure) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  measure.beats.forEach(<span class="fstat-no" title="function not covered" >(b</span>eat, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    switch (index % 4) {</span>
+      case 0: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth1); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      case 1: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth2); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      case 2: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth3); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      case 3: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth4); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      default: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth1);</span>
+    }
+  });
+});
+&nbsp;
+<span class="cstat-no" title="statement not covered" >track2.measures.forEach((<span class="fstat-no" title="function not covered" >measure) =&gt; {</span></span>
+<span class="cstat-no" title="statement not covered" >  measure.beats.forEach(<span class="fstat-no" title="function not covered" >(b</span>eat, index) =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    switch (index % 3) {</span>
+      case 0: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth21); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      case 1: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth22); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      case 2: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth23); <span class="cstat-no" title="statement not covered" >break;</span></span>
+      default: <span class="cstat-no" title="statement not covered" >beat.checkBeat(triggerSynth1);</span>
+    }
+  });
+});
+&nbsp;
+&nbsp;
+const sequences = <span class="cstat-no" title="statement not covered" >[];</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >sequences.push(track.scheduleTrack(Tone));</span>
+<span class="cstat-no" title="statement not covered" >sequences.push(track2.scheduleTrack(Tone));</span>
+sequences.forEach(<span class="fstat-no" title="function not covered" >seq</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >  seq.start(0);</span>
+});
+&nbsp;
+// Tone.Transport.loopEnd = `${track2.measures.length}m`;
+// Tone.Transport.loop = true;
+// Tone.Transport.timeSignature = 4;
+// Tone.Transport.bpm.value = 120;
+&nbsp;
+// Tone.context.latencyHint = 'balanced';
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 27 2019 22:48:00 GMT-0500 (Central Daylight Time)
+</div>
+</div>
+<script src="..\..\prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="..\..\sorter.js"></script>
+</body>
+</html>
