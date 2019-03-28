@@ -1,4 +1,4 @@
-class Beat {
+export default class Beat {
 
   /**
    * Basic constructor for the Beat class.
@@ -26,5 +26,3 @@ class Beat {
   }
 
 }
-
-export default Beat;

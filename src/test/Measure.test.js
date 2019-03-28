@@ -1,4 +1,4 @@
-import {Measure} from "../js/models/Measure";
+import Measure from "../js/models/Measure";
 
 /**
  * Tests for the Measure class.

@@ -1,6 +1,6 @@
 import Beat from "./Beat";
 
-class Measure {
+export default class Measure {
 
 
   /**
@@ -16,5 +16,3 @@ class Measure {
 
   }
 }
-
-export default Measure;
