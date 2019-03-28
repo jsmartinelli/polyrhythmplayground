@@ -15,8 +15,6 @@ export function createTrack (trackData) {
 
 
 export function deleteTrack (track) {
-   console.log('track', track);
-
   return {
     type: DELETE_TRACK,
     payload: {

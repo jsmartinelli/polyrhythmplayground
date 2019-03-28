@@ -10,39 +10,26 @@ class App extends React.Component {
 
   constructor (props) {
     super(props);
-
-    // // set initial state
-    // this.state = {
-    //   tracks: [],
-    //   currentInstrument: '',
-    // };
-
     this.playing = false;
-
-    // this.updateStateValue = this.updateStateValue.bind(this);
-    this.toggle = this.toggle.bind(this);
   }
 
-  // updateStateValue (type, value) {
-  //   let obj = {};
-  //   obj[type] = value;
-  //   this.setState(obj);
-  // }
 
   createTrack = (trackData) => {
     this.props.dispatch(createTrack(trackData));
-
   };
 
   removeTrack = (track) => {
     this.props.dispatch(deleteTrack(track));
   };
 
+  onTempoChange = (e) => {
+    Tone.Transport.tempo = e.target.value;
+  };
 
   /**
    * Starts and stops all of the tracks.
    */
-  toggle () {
+  toggle = () => {
     if (!this.playing) {
       // Starting the tracks slightly in the future to help fight latency
       Tone.Transport.start('+0.5');
@@ -58,7 +45,7 @@ class App extends React.Component {
       <h1>Let's make some music!</h1>
       <div id="play">
         <label htmlFor="tempo">Tempo: </label>
-        <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo"/>
+        <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo" onChange={this.onTempoChange}/>
         <button name="play" id="play" onClick={this.toggle}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>
