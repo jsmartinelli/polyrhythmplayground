@@ -1,15 +1,15 @@
 import Measure from "./Measure";
 import {beatDivisions} from '../common/common';
 
-class Track {
+export default class Track {
 
   /**
    * Create a new Track based ont the following parameters
    * @param {number} beatsPerBar - How many beats are in a measure (this is the numerator of the time signature)
    * @param {number} beatUnit - What is one beat in a measure (This is the denominator of the time signature)
    * @param {number} numOfMeasures - How many measures are in the track.
-   * @param {number} beatDivision - The number used to decide how many beats are in a measure
-   * (e.g. beats in a measure = beatDivision * beatsPerBar)
+   * @param {string} beatDivision - The name of the note length used to decide how many beats are in a measure
+   *                    (e.g. 'quarter', 'eighth', etc.)
    */
   constructor (beatsPerBar, beatUnit, numOfMeasures, beatDivision) {
     // Generate a unique-ish ID based on Date.now() and a random value
@@ -78,4 +78,3 @@ class Track {
 
 }
 
-export default Track;
