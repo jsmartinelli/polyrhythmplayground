@@ -2,11 +2,14 @@ import trackReducers from '../js/store/reducers/TrackReducers';
 import * as common from '../js/common/common';
 import Track from "../js/models/Track";
 
+let initialState;
 
+beforeEach(() => {
+  initialState = {
+    tracks: []
+  }
+});
 
-const initialState = {
-  tracks: []
-};
 
 test('Basic create Track flow', () => {
   const track = new Track(4, 4, 1, 'quarter');
@@ -32,13 +35,9 @@ test('Basic remove Track flow', () => {
     }
   };
 
-  const state = {
-    tracks: []
-  };
+  initialState.tracks.push(track);
 
-  state.tracks.push(track);
-
-  const outputState = trackReducers(state, action)
+  const outputState = trackReducers(initialState, action)
   expect(outputState.tracks.length).toBe(0);
 
 });
@@ -46,10 +45,7 @@ test('Basic remove Track flow', () => {
 
 test('Default flow', () => {
   const track = new Track(4, 4, 1, 'quarter');
-  const state = {
-    tracks: []
-  };
-  state.tracks.push(track);
+  initialState.tracks.push(track);
 
   const action = {
     type: "AN_INVALID_TYPE",
@@ -58,7 +54,7 @@ test('Default flow', () => {
     }
   };
 
-  const outputState = trackReducers(state, action)
+  const outputState = trackReducers(initialState, action)
   expect(outputState.tracks.length).toBe(1);
 
 });
