@@ -1,3 +1,59 @@
 body {
-    background: black;
+    background: darkblue;
+    color: white;
+}
+
+.addtrack {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid white;
+    margin: 5px;
+}
+
+.addtrack__item {
+    margin: 10px;
+}
+
+.trackarea {
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.track {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid white;
+    margin: 5px;
+}
+
+.track__button {
+    margin: 2px;
+}
+
+.measure {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid white;
+}
+
+.beat {
+    border: 1px solid black;
+    margin: 2px;
+}
+
+.beat__checkbox {
+    margin: 10px;
+}
+
+
+
+
+
+
+.instrumentselect {
+    border: 1px solid white;
+    width: 100%;
+    padding: 5px;
 }

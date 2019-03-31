@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/Tracks.css';
 import Track from "./Track";
 
 class TrackArea extends React.Component {
@@ -9,12 +8,9 @@ class TrackArea extends React.Component {
 
     this.props.tracks.forEach((track) => trackComponents.push(<Track key={track.id} track={track} removeHandler={this.props.removeHandler}/>));
 
-    return <div className="tracks">
-      <h2>Tracks</h2>
-
-      <ul>
+    return <div className="trackarea">
+      <h3>Tracks</h3>
         {trackComponents}
-      </ul>
     </div>
   }
 }

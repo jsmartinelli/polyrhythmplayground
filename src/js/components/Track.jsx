@@ -8,11 +8,10 @@ class Track extends React.Component {
     });
 
     return (
-      <li>
-        <h3>This is a track #{this.props.track.index}</h3>
+      <div className="track">
         {measures}
-        <button onClick={() => this.props.removeHandler(this.props.track.id)}>X</button>
-      </li>
+        <button className="track__button" onClick={() => this.props.removeHandler(this.props.track.id)}>X</button>
+      </div>
     );
   }
 }

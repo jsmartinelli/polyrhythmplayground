@@ -33,8 +33,8 @@ class AddTrack extends React.Component {
 
 
   render() {
-    return <div name="addtrack" id="addtrack">
-      <div>
+    return <div className="addtrack" name="addtrack" id="addtrack">
+      <div className="addtrack__item">
         <label htmlFor="timeSignature">Time Signature </label>
         <select id="timeSignature" name="timeSignature" defaultValue="4/4" onChange={this.timeSignatureOnChange}>
           {
@@ -44,7 +44,7 @@ class AddTrack extends React.Component {
           }
         </select>
       </div>
-      <div>
+      <div className="addtrack__item">
         <label htmlFor="noteDivision">Note Division </label>
         <select id="noteDivision" name="noteDivision" defaultValue="quarter" onChange={this.noteDivisionOnChange}>
           {
@@ -54,10 +54,14 @@ class AddTrack extends React.Component {
           }
         </select>
       </div>
-      <label htmlFor="measures">Measures: </label>
-      <input type="number" min="1" max="8" step="1" id="measures" name="measures" defaultValue="2"
-             onChange={this.measureOnChange}/>
-      <button name="addtrack" id="addtrack" onClick={this.createTrack}>Add Track</button>
+      <div className="addtrack__item">
+        <label htmlFor="measures">Measures: </label>
+        <input type="number" min="1" max="8" step="1" id="measures" name="measures" defaultValue="2"
+               onChange={this.measureOnChange}/>
+      </div>
+      <div className="addtrack__item">
+        <button name="addtrack" id="addtrack" onClick={this.createTrack}>Add Track</button>
+      </div>
     </div>
   }
 }

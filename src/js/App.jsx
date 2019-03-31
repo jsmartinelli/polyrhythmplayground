@@ -5,6 +5,7 @@ import Tone from 'tone';
 import AddTrack from "./components/AddTrack";
 import {createTrack, deleteTrack} from './store/actions/TrackActions';
 import {connect} from "react-redux";
+import './styles/index.css';
 
 class App extends React.Component {
 

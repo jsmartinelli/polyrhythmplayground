@@ -1,5 +1,4 @@
 import React from 'react';
-import '../styles/InstrumentSelect.css';
 import Instrument from "./Instrument";
 
 class InstrumentSelect extends React.Component {

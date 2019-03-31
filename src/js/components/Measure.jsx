@@ -5,8 +5,7 @@ const Measure = (props) => {
 
   const beats = props.beats.map((beat, index) => <Beat key={index} beat={beat}/>);
 
-  return <div>
-    <p>This is a measure</p>
+  return <div className="measure">
     {beats}
   </div>
 
