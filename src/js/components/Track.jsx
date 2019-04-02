@@ -2,9 +2,14 @@ import React from 'react';
 import Measure from "./Measure";
 
 class Track extends React.Component {
+
+  updateTrack = () => {
+    this.props.updateHandler(this.props.track);
+  };
+
   render () {
     const measures = this.props.track.measures.map((measure, index) => {
-      return <Measure key={index} beats={measure.beats}/>
+      return <Measure key={index} beats={measure.beats} metadata={this.props.metadata} updateHandler={this.updateTrack}/>
     });
 
     return (

@@ -3,17 +3,12 @@ import TrackArea from "./components/TrackArea";
 import InstrumentSelect from "./components/InstrumentSelect";
 import Tone from 'tone';
 import AddTrack from "./components/AddTrack";
-import {createTrack, deleteTrack} from './store/actions/TrackActions';
+import {createTrack, deleteTrack, updateTrack} from './store/actions/TrackActions';
+import {playTracks} from './store/actions/PlayActions';
 import {connect} from "react-redux";
 import './styles/index.css';
 
 class App extends React.Component {
-
-  constructor (props) {
-    super(props);
-    this.playing = false;
-  }
-
 
   createTrack = (trackData) => {
     this.props.dispatch(createTrack(trackData));
@@ -27,19 +22,15 @@ class App extends React.Component {
     Tone.Transport.tempo = e.target.value;
   };
 
-  /**
-   * Starts and stops all of the tracks.
-   */
-  toggle = () => {
-    if (!this.playing) {
-      // Starting the tracks slightly in the future to help fight latency
-      Tone.Transport.start('+0.5');
-    }
-    else {
-      Tone.Transport.stop();
-    }
-    this.playing = !this.playing;
-  }
+  playTrack = () => {
+    this.props.dispatch(playTracks());
+  };
+
+
+  updateTrack = (track) => {
+    this.props.dispatch(updateTrack(track));
+  };
+
 
   render () {
     return <div>
@@ -47,10 +38,10 @@ class App extends React.Component {
       <div id="play">
         <label htmlFor="tempo">Tempo: </label>
         <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo" onChange={this.onTempoChange}/>
-        <button name="play" id="play" onClick={this.toggle}>Play</button>
+        <button name="play" id="play" onClick={this.playTrack}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>
-      <TrackArea tracks={this.props.tracks} removeHandler={this.removeTrack}/>
+      <TrackArea tracks={this.props.tracks.tracks} metadata={this.props.metadata} removeHandler={this.removeTrack} updateHandler={this.updateTrack}/>
       <br/>
       <InstrumentSelect/>
     </div>;
@@ -58,7 +49,7 @@ class App extends React.Component {
 }
 
 function mapStateToProps (state) {
-  return state.tracks;
+  return state;
 }
 
 export default connect(mapStateToProps)(App);

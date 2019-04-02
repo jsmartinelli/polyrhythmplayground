@@ -3,7 +3,7 @@ import Beat from "./Beat";
 
 const Measure = (props) => {
 
-  const beats = props.beats.map((beat, index) => <Beat key={index} beat={beat}/>);
+  const beats = props.beats.map((beat, index) => <Beat key={index} beat={beat} metadata={props.metadata} updateHandler={props.updateHandler}/>);
 
   return <div className="measure">
     {beats}

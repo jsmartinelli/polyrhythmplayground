@@ -47,6 +47,10 @@ body {
     margin: 10px;
 }
 
+.beat__checkbox--playing {
+    background: green;
+}
+
 
 
 

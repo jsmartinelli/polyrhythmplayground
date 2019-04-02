@@ -6,6 +6,7 @@ export default class Beat {
   constructor () {
     this.isChecked = false;
     this.soundFunction = null;
+    this.isplaying = false;
   }
 
   /**
@@ -23,6 +24,10 @@ export default class Beat {
   uncheckBeat () {
     this.isChecked = false;
     this.soundFunction = null;
+  }
+
+  togglePlaying () {
+    this.isplaying = !this.isplaying;
   }
 
 }
