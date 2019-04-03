@@ -2,7 +2,8 @@ import * as constants from '../../common/common';
 
 const initialState = {
   isPlaying: false,
-  sequences: []
+  sequences: [],
+  bpm: ''
 };
 
 
@@ -12,6 +13,13 @@ export default function metadataReducers (state = initialState, action) {
       return {
         ...state,
         isPlaying: !state.isPlaying
+      }
+    }
+
+    case constants.UPDATE_BPM: {
+      return {
+        ...state,
+        bpm: action.payload.bpm
       }
     }
 

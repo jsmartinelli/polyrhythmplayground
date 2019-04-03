@@ -4,9 +4,9 @@ import Tone from "tone";
 const Beat = (props) => {
   const polySynth = new Tone.Synth().toMaster();
 
-  function triggerSynth1(time){
+  const triggerSynth1 = (time) => {
     polySynth.triggerAttackRelease('C4', time);
-  }
+  };
 
   const updateBeat = (e) => {
     props.beat.isChecked = e.target.checked;
@@ -14,10 +14,10 @@ const Beat = (props) => {
     props.updateHandler();
   };
 
-
+  const classCSS = props.beat.isPlaying ? "beat__checkbox--playing" : "beat__checkbox"
 
   return <div className="beat">
-    <div className={props.beat.isPlaying ? "checkbox--playing": "beat__checkbox beat"}>
+    <div className={classCSS}>
       <input type="checkbox" onChange={updateBeat} disabled={props.metadata.isPlaying}/>
     </div>
   </div>

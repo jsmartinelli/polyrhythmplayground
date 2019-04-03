@@ -3,6 +3,7 @@
   "DELETE_TRACK": "DELETE_TRACK",
   "TOGGLE_PLAYING": "TOGGLE_PLAYING",
   "UPDATE_TRACK": "UPDATE_TRACK",
+  "UPDATE_BPM": "UPDATE_BPM",
   "timeSignatures": ["3/4", "4/4", "5/4"],
   "beatDivisions": [
     {"name": "whole", "value": 1},

@@ -1,10 +1,9 @@
 import React from 'react';
 import TrackArea from "./components/TrackArea";
 import InstrumentSelect from "./components/InstrumentSelect";
-import Tone from 'tone';
 import AddTrack from "./components/AddTrack";
 import {createTrack, deleteTrack, updateTrack} from './store/actions/TrackActions';
-import {playTracks} from './store/actions/PlayActions';
+import {playTracks, updateBPM} from './store/actions/PlayActions';
 import {connect} from "react-redux";
 import './styles/index.css';
 
@@ -19,7 +18,7 @@ class App extends React.Component {
   };
 
   onTempoChange = (e) => {
-    Tone.Transport.tempo = e.target.value;
+    this.props.dispatch(updateBPM(e.target.value));
   };
 
   playTrack = () => {
@@ -37,7 +36,9 @@ class App extends React.Component {
       <h1>Let's make some music!</h1>
       <div id="play">
         <label htmlFor="tempo">Tempo: </label>
-        <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo" onChange={this.onTempoChange}/>
+        <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo"
+               disabled={this.props.metadata.isPlaying}
+               onChange={this.onTempoChange}/>
         <button name="play" id="play" onClick={this.playTrack}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>

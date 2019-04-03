@@ -6,6 +6,7 @@ let sequenceArray;
 export function playTracks () {
   return (dispatch, getState) => {
     const {tracks, metadata} = getState();
+    const bpm = metadata.bpm;
     // If the tracks are already playing, stop them.
     if (metadata.isPlaying) {
       Tone.Transport.stop();
@@ -19,7 +20,7 @@ export function playTracks () {
     // Play them!
     dispatch(togglePlaying());
     Tone.context.latencyHint = 'balanced';
-    Tone.Transport.bpm.value = 120;
+    Tone.Transport.bpm.value = bpm;
     Tone.Transport.start('+0.1');
 
   };
@@ -29,6 +30,15 @@ export function playTracks () {
 export function togglePlaying () {
   return {
     type: constants.TOGGLE_PLAYING
+  }
+}
+
+export function updateBPM (bpm) {
+  return {
+    type: constants.UPDATE_BPM,
+    payload: {
+      bpm: bpm
+    }
   }
 }
 
@@ -66,6 +76,6 @@ function _scheduleTrack (track) {
 
   return seq;
 
-};
+}
 
 
