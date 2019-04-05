@@ -15,7 +15,7 @@ export function playTracks () {
     }
 
     // Schedule all of the tracks
-    sequenceArray = tracks.tracks.map((track) => _scheduleTrack(track));
+    sequenceArray = tracks.tracks.map((track, index) => _scheduleTrack(track, index));
     sequenceArray.forEach(sequence => sequence.start(0));
 
     // Play them!
@@ -51,7 +51,7 @@ export function updateBPM (bpm) {
  * @private
  * @param {Track} track - a Track object
  */
-function _scheduleTrack (track) {
+function _scheduleTrack (track, trackIndex) {
   const patternArray = [];
 
   const {beatLength} = track;
@@ -65,7 +65,8 @@ function _scheduleTrack (track) {
 
   const seq =  new Tone.Sequence((time, beat) => {
     if (beat.isChecked) {
-      beat.soundFunction(beatLength);
+      //beat.soundFunction(beatLength);
+      beat.soundFunction(time, trackIndex);
     }
     // TODO: figure out how to make draw work.
     // Tone.Draw.schedule(() => {

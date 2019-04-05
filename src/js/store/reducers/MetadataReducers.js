@@ -1,9 +1,14 @@
 import * as constants from '../../common/common';
+import Tone from 'tone';
 
 const initialState = {
   isPlaying: false,
   sequences: [],
-  bpm: ''
+  bpm: '',
+  samples: [new Tone.Player('https://s3-us-west-2.amazonaws.com/s.cdpn.io/969699/eucl-e3-2.mp3'),
+            new Tone.Player('https://s3-us-west-2.amazonaws.com/s.cdpn.io/969699/eucl-fs3-1.mp3'),
+            new Tone.Player('https://s3-us-west-2.amazonaws.com/s.cdpn.io/969699/eucl-a3-1.mp3'),
+            new Tone.Player('https://s3-us-west-2.amazonaws.com/s.cdpn.io/969699/eucl-cs4-1.mp3')]
 };
 
 

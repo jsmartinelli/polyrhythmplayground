@@ -8,9 +8,17 @@ const Beat = (props) => {
     polySynth.triggerAttackRelease('C4', time);
   };
 
+  const playSample = (time, trackIndex) => {
+    const sampleLength = props.metadata.samples.length;
+    const sample = props.metadata.samples[trackIndex % sampleLength];
+    sample.toMaster();
+    sample.start(time);
+  };
+
   const updateBeat = (e) => {
     props.beat.isChecked = e.target.checked;
-    props.beat.soundFunction = triggerSynth1;
+    //props.beat.soundFunction = triggerSynth1;
+    props.beat.soundFunction = playSample;
     props.updateHandler();
   };
 

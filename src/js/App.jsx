@@ -30,7 +30,7 @@ class App extends React.Component {
     this.props.dispatch(updateTrack(track));
   };
 
-
+  
   render () {
     return <div>
       <h1>Let's make some music!</h1>
