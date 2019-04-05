@@ -16,11 +16,14 @@ export function playTracks () {
 
     // Schedule all of the tracks
     sequenceArray = tracks.tracks.map((track) => _scheduleTrack(track));
+    sequenceArray.forEach(sequence => sequence.start(0));
 
     // Play them!
     dispatch(togglePlaying());
     Tone.context.latencyHint = 'balanced';
-    Tone.Transport.bpm.value = bpm;
+    //TODO: why does setting the BPM force it to 4/4 time?
+    Tone.Transport.bpm.value = bpm ? bpm : 120;
+    //Tone.Transport.loop = true;
     Tone.Transport.start('+0.1');
 
   };
@@ -53,6 +56,7 @@ function _scheduleTrack (track) {
 
   const {beatLength} = track;
 
+
   track.measures.forEach((measure) => {
     measure.beats.forEach((beat) => {
       patternArray.push(beat);
@@ -73,6 +77,12 @@ function _scheduleTrack (track) {
   // set each sequence to loop and start at the same time.
   seq.loop = true;
   seq.start(0);
+  //seq.loopStart = 0;
+  // TODO: See if setting loopEnd to the
+  const loopEnd = `+${patternArray.length} * ${beatLength}`;
+  console.log(`LoopEnd for Track ${track.id}`, loopEnd);
+  //seq.loopEnd = loopEnd;
+
 
   return seq;
 
