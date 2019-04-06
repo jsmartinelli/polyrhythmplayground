@@ -47,4 +47,18 @@ test("Track Creation with String number values", () => {
   expect(track.beatLength).toBe(beatLength);
 });
 
+test("Track ID is unique", () => {
+  const beatsPerBar = 4;
+  const beatUnit = 4;
+  const numOfMeasures = 2;
+  const beatDivisionInput = 'quarter';
+  const beatDivisionOutput = 1;
+  const beats = beatsPerBar * beatDivisionOutput;
+  const beatLength = `${beatDivisionOutput * beatUnit}n`;
+  const track1 = new Track(beatsPerBar, beatUnit, numOfMeasures, beatDivisionInput);
+  const track2 = new Track(beatsPerBar, beatUnit, numOfMeasures, beatDivisionInput);
+  expect(track1.id === track2.id).toBeFalsy();
+
+});
+
 

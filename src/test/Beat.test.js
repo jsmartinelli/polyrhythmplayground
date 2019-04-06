@@ -1,14 +1,17 @@
 import Beat from "../js/models/Beat";
 
 let beat;
+const beatId = 1;
+const measureId = 'T1_M1';
 
 beforeEach(() => {
-  beat = new Beat();
+  beat = new Beat(beatId, measureId);
 });
 
 test('Check the beat defaults', () => {
   expect(beat.isChecked).toBe(false);
   expect(beat.soundFunction).toBe(null);
+  expect(beat.id).toBe(`${measureId}_B${beatId}`);
 
 });
 

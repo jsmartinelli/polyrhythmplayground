@@ -24,7 +24,7 @@ body {
 .track {
     display: flex;
     justify-content: flex-start;
-    border: 1px solid white;
+    /*border: 1px solid white;*/
     margin: 5px;
 }
 
@@ -39,21 +39,23 @@ body {
 }
 
 .beat {
-    border: 1px solid black;
+    border: 2px solid black;
     margin: 2px;
+    height: 50px;
+    width: 50px;
 }
 
-.beat__checkbox {
-    margin: 10px;
+.beat--unchecked {
+    background-color: gray;
 }
 
-.beat__checkbox--playing {
+.beat--checked {
+    background-color: red;
+}
+
+.beat--playing {
     background: green;
 }
-
-
-
-
 
 
 .instrumentselect {

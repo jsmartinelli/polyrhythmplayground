@@ -22,7 +22,7 @@ export default class Track {
 
     const beats = this.beatDivision * this.beatsPerBar;
     for (let i = 0; i < numOfMeasures; i++) {
-      this.measures.push(new Measure(beats));
+      this.measures.push(new Measure(i, this.id, beats));
     }
 
 

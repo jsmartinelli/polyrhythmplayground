@@ -5,7 +5,10 @@ import Measure from "../js/models/Measure";
  */
 test('Check that the correct number of beats where created', () => {
   const beats = 8;
-  const measure = new Measure(beats);
+  const trackId = "T1";
+  const measureId = 1;
+  const measure = new Measure(measureId, trackId, beats);
 
   expect(measure.beats.length).toBe(beats);
+  expect(measure.id).toBe(`${trackId}_M${measureId}`);
 });

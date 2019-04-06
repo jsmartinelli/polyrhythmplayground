@@ -1,12 +1,14 @@
 export default class Beat {
 
   /**
-   * Basic constructor for the Beat class.
+   *  Constructor the a beat.
+   * @param beatId
+   * @param measureId
    */
-  constructor () {
+  constructor (beatId, measureId) {
+    this.id = `${measureId}_B${beatId}`;
     this.isChecked = false;
     this.soundFunction = null;
-    this.isplaying = false;
   }
 
   /**
@@ -25,9 +27,4 @@ export default class Beat {
     this.isChecked = false;
     this.soundFunction = null;
   }
-
-  togglePlaying () {
-    this.isplaying = !this.isplaying;
-  }
-
 }

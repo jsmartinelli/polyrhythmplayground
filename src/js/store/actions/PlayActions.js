@@ -69,10 +69,11 @@ function _scheduleTrack (track, trackIndex) {
       beat.soundFunction(time, trackIndex);
     }
     // TODO: figure out how to make draw work.
-    // Tone.Draw.schedule(() => {
-    //   console.log('Draw for', beat);
-    //   beat.togglePlaying();
-    // }, time);
+    Tone.Draw.schedule(() => {
+      const beatElement = document.getElementById(beat.id);
+      beatElement.classList.add("beat--playing");
+      setTimeout(()=> beatElement.classList.remove("beat--playing"), 100);
+    }, time);
   }, patternArray, beatLength);
 
   // set each sequence to loop and start at the same time.
