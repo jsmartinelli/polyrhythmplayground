@@ -10,6 +10,8 @@ export function playTracks () {
     // If the tracks are already playing, stop them.
     if (metadata.isPlaying) {
       Tone.Transport.stop();
+      // Clean up sequences to be safe
+      sequenceArray.forEach(sequence => sequence.dispose());
       dispatch(togglePlaying());
       return;
     }
@@ -21,9 +23,7 @@ export function playTracks () {
     // Play them!
     dispatch(togglePlaying());
     Tone.context.latencyHint = 'balanced';
-    //TODO: why does setting the BPM force it to 4/4 time?
     Tone.Transport.bpm.value = bpm ? bpm : 120;
-    //Tone.Transport.loop = true;
     Tone.Transport.start('+0.1');
 
   };
