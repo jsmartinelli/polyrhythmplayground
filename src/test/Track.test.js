@@ -19,6 +19,7 @@ test("Basic Track creation", () => {
   expect(track.beatUnit).toBe(beatUnit);
   expect(track.beatDivision).toBe(beatDivisionOutput);
   expect(track.beatLength).toBe(beatLength);
+  expect(track.beatDivisonName).toBe(beatDivisionInput);
 
   // Check that the correct number of measures created
   expect(track.measures.length).toBe(numOfMeasures);

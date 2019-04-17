@@ -10,10 +10,10 @@ class TrackArea extends React.Component {
                                                                      metadata={this.props.metadata}
                                                                      removeHandler={this.props.removeHandler}
                                                                      updateHandler={this.props.updateHandler}/>));
+    const NO_TRACKS_MESSAGE = 'Add a track to make some cool rhythms';
 
     return <div className="trackarea">
-      <h3>Tracks</h3>
-        {trackComponents}
+        {trackComponents.length === 0 ? NO_TRACKS_MESSAGE : trackComponents}
     </div>
   }
 }

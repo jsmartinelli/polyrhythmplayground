@@ -13,9 +13,14 @@ const Track = (props) => {
 
   return (
     <div className="track">
-      {measures}
-      <button className="track__button" onClick={() => props.removeHandler(props.track.id)}
+      <div className="track__details">
+        {props.track.beatsPerBar}/{props.track.beatUnit} - {props.track.beatDivisonName} notes
+      </div>
+      <div className="track__data">
+        {measures}
+        <button className="button track__button" onClick={() => props.removeHandler(props.track.id)}
               disabled={props.metadata.isPlaying}>X</button>
+      </div>
     </div>
   );
 

@@ -60,7 +60,7 @@ class AddTrack extends React.Component {
                onChange={this.measureOnChange}/>
       </div>
       <div className="addtrack__item">
-        <button name="addtrack" id="addtrack" onClick={this.createTrack}>Add Track</button>
+        <button className="button" name="addtrack" id="addtrack" onClick={this.createTrack}>Add Track</button>
       </div>
     </div>
   }

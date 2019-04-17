@@ -1,6 +1,5 @@
 import React from 'react';
 import TrackArea from "./components/TrackArea";
-import InstrumentSelect from "./components/InstrumentSelect";
 import AddTrack from "./components/AddTrack";
 import {createTrack, deleteTrack, updateTrack} from './store/actions/TrackActions';
 import {playTracks, updateBPM} from './store/actions/PlayActions';
@@ -30,21 +29,20 @@ class App extends React.Component {
     this.props.dispatch(updateTrack(track));
   };
 
-  
+
   render () {
-    return <div>
-      <h1>Let's make some music!</h1>
-      <div id="play">
+    return <div className="app">
+      <div id="play" className="playarea" name="playarea">
         <label htmlFor="tempo">Tempo: </label>
         <input type="number" min="1" max="200" defaultValue="120" name="tempo" id="tempo"
                disabled={this.props.metadata.isPlaying}
                onChange={this.onTempoChange}/>
-        <button name="play" id="play" onClick={this.playTrack}>Play</button>
+        <button className="button" name="play" id="play" onClick={this.playTrack}>Play</button>
       </div>
       <AddTrack createTrackHandler={this.createTrack}/>
       <TrackArea tracks={this.props.tracks.tracks} metadata={this.props.metadata} removeHandler={this.removeTrack} updateHandler={this.updateTrack}/>
       <br/>
-      <InstrumentSelect/>
+      {/*<InstrumentSelect/>*/}
     </div>;
   }
 }

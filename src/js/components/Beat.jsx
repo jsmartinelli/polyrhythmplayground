@@ -1,5 +1,4 @@
 import React from 'react';
-import Tone from "tone";
 
 const Beat = (props) => {
 
@@ -10,12 +9,12 @@ const Beat = (props) => {
     sample.start(time);
   };
 
-  const updateBeat = (e) => {
-    props.beat.isChecked = e.target.checked;
-    //props.beat.soundFunction = triggerSynth1;
-    props.beat.soundFunction = playSample;
-    props.updateHandler();
-  };
+  // const updateBeat = (e) => {
+  //   props.beat.isChecked = e.target.checked;
+  //   //props.beat.soundFunction = triggerSynth1;
+  //   props.beat.soundFunction = playSample;
+  //   props.updateHandler();
+  // };
 
   const onClick = () => {
     // Don't update currently playing
