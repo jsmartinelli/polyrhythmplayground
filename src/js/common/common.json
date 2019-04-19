@@ -4,12 +4,155 @@
   "TOGGLE_PLAYING": "TOGGLE_PLAYING",
   "UPDATE_TRACK": "UPDATE_TRACK",
   "UPDATE_BPM": "UPDATE_BPM",
-  "timeSignatures": ["3/4", "4/4", "5/4"],
+  "timeSignatures": [
+    "3/4",
+    "4/4",
+    "5/4"
+  ],
   "beatDivisions": [
-    {"name": "whole", "value": 1},
-    {"name": "half", "value":  2},
-    {"name": "quarter", "value": 4},
-    {"name": "eighth", "value": 8},
-    {"name": "sixteenth", "value": 16}
-  ]
+    {
+      "name": "whole",
+      "value": 1
+    },
+    {
+      "name": "half",
+      "value": 2
+    },
+    {
+      "name": "quarter",
+      "value": 4
+    },
+    {
+      "name": "eighth",
+      "value": 8
+    },
+    {
+      "name": "sixteenth",
+      "value": 16
+    }
+  ],
+  "instrument_defaults": {
+    "bassDrum": [
+      {
+        "type": "MembraneSynth",
+        "note": "C1",
+        "length": "8n",
+        "trigger": true,
+        "order": 1,
+        "toMaster": true,
+        "options": {
+          "pitchDecay": 0.05,
+          "octaves": 5,
+          "oscillator": {
+            "type": "sine"
+          },
+          "envelope": {
+            "attack": 0.001,
+            "decay": 0.4,
+            "sustain": 0.01,
+            "release": 1.4,
+            "attackCurve": "exponential"
+          }
+        }
+      }
+    ],
+    "snareDrum": [
+      {
+        "type": "NoiseSynth",
+        "length": "8n",
+        "trigger": true,
+        "order": 1,
+        "toMaster": true,
+        "options": {
+          "noise": {
+            "type": "pink",
+            "playbackRate": 3
+          },
+          "envelope": {
+            "attack": 0.001,
+            "decay": 0.13,
+            "sustain": 0,
+            "release": 0.03
+          }
+        }
+      }
+    ],
+    "closedHihat": [
+      {
+        "type": "Freeverb",
+        "trigger": false,
+        "order": 3,
+        "toMaster": true,
+        "options": {
+          "roomSize": 0.03,
+          "dampening": 3000
+        }
+      },
+      {
+        "type": "Filter",
+        "trigger": false,
+        "order": 2,
+        "toMaster": false,
+        "options": {
+          "frequency": 14800,
+          "type": "lowpass",
+          "rolloff": -24,
+          "Q": 1
+        }
+      },
+      {
+        "type": "MetalSynth",
+        "trigger": true,
+        "length": "16n",
+        "order": 1,
+        "toMaster": false,
+        "options": {
+          "frequency": 80,
+          "envelope": {
+            "attack": 0.004,
+            "decay": 0.04,
+            "sustain": 0.001,
+            "release": 0.002
+          },
+          "harmonicity": 6.1,
+          "modulationIndex": 32,
+          "resonance": 8000,
+          "octaves": 1
+        }
+      }
+    ],
+    "crashCymbal": [
+      {
+        "type": "Freeverb",
+        "trigger": false,
+        "toMaster": true,
+        "order": 2,
+        "options": {
+          "roomSize": 0.8,
+          "dampening": 5000
+        }
+      },
+      {
+        "type": "MetalSynth",
+        "trigger": true,
+        "length": "16n",
+        "order": 1,
+        "toMaster": false,
+        "options": {
+          "frequency": 600,
+          "envelope": {
+            "attack": 0.001,
+            "decay": 1.5,
+            "sustain": 0.5,
+            "release": 3
+          },
+          "harmonicity": 2.1,
+          "modulationIndex": 32,
+          "resonance": 4000,
+          "octaves": 1.1
+        }
+
+      }
+    ]
+  }
 }

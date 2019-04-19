@@ -65,10 +65,8 @@ function _scheduleTrack (track, trackIndex) {
 
   const seq =  new Tone.Sequence((time, beat) => {
     if (beat.isChecked) {
-      //beat.soundFunction(beatLength);
       beat.soundFunction(time, trackIndex);
     }
-    // TODO: figure out how to make draw work.
     Tone.Draw.schedule(() => {
       const beatElement = document.getElementById(beat.id);
       beatElement.classList.add("beat--playing");
@@ -79,11 +77,9 @@ function _scheduleTrack (track, trackIndex) {
   // set each sequence to loop and start at the same time.
   seq.loop = true;
   seq.start(0);
-  //seq.loopStart = 0;
-  // TODO: See if setting loopEnd to the
   const loopEnd = `+${patternArray.length} * ${beatLength}`;
   console.log(`LoopEnd for Track ${track.id}`, loopEnd);
-  //seq.loopEnd = loopEnd;
+
 
 
   return seq;

@@ -5,6 +5,7 @@ import {createTrack, deleteTrack, updateTrack} from './store/actions/TrackAction
 import {playTracks, updateBPM} from './store/actions/PlayActions';
 import {connect} from "react-redux";
 import './styles/index.css';
+import InstrumentSelect from "./components/InstrumentSelect";
 
 class App extends React.Component {
 
@@ -42,7 +43,7 @@ class App extends React.Component {
       <AddTrack createTrackHandler={this.createTrack}/>
       <TrackArea tracks={this.props.tracks.tracks} metadata={this.props.metadata} removeHandler={this.removeTrack} updateHandler={this.updateTrack}/>
       <br/>
-      {/*<InstrumentSelect/>*/}
+      <InstrumentSelect/>
     </div>;
   }
 }
